@@ -26,6 +26,18 @@ class ArraysTaskTest {
     }
 
     @Test
+    void findFirstNumberWithSeveralOptions() {
+        double actual = unit.findFirstNumber(new double[]{3, 2.2, 4.235, 1.7});
+        assertEquals(2.2, actual);
+    }
+
+    @Test
+    void findFirstFoundValueNotExists() {
+        double actual = unit.findFirstNumber(new double[]{3, 9.2, 4.235, 3.9});
+        assertEquals(0, actual);
+    }
+
+    @Test
     void arithmeticalMean() {
         double actual = unit.arithmeticalMean(new double[]{1.5, -3.8, -5, 2, 1, 0});
         assertEquals(1.5, actual);
