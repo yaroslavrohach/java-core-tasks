@@ -9,7 +9,7 @@ import java.util.function.IntUnaryOperator;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class LambdaExpression {
+public class LambdaExpressionTask {
 
     /**
      * Implement the predicate that check if input string length is higher than 5

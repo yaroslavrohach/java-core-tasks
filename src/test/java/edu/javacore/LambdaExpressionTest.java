@@ -22,14 +22,14 @@ class LambdaExpressionTest {
     class StringLengthPredicateTest {
         @Test
         void stringLengthLessThan5() {
-            Predicate<String> predicate = LambdaExpression.stringLengthPredicate();
+            Predicate<String> predicate = LambdaExpressionTask.stringLengthPredicate();
             boolean actual = predicate.test("abcde");
             assertFalse(actual);
         }
 
         @Test
         void stringLengthMoreThan5() {
-            Predicate<String> stringPredicate = LambdaExpression.stringLengthPredicate();
+            Predicate<String> stringPredicate = LambdaExpressionTask.stringLengthPredicate();
             boolean actual = stringPredicate.test("abcdef");
             assertTrue(actual);
         }
@@ -39,14 +39,14 @@ class LambdaExpressionTest {
     class EvenNumberPredicateTest {
         @Test
         void evenNumberPositiveResult() {
-            IntPredicate intPredicate = LambdaExpression.evenNumberPredicate();
+            IntPredicate intPredicate = LambdaExpressionTask.evenNumberPredicate();
             boolean actual = intPredicate.test(2);
             assertTrue(actual);
         }
 
         @Test
         void evenNumberNegativeResult() {
-            IntPredicate intPredicate = LambdaExpression.evenNumberPredicate();
+            IntPredicate intPredicate = LambdaExpressionTask.evenNumberPredicate();
             boolean actual = intPredicate.test(3);
             assertFalse(actual);
         }
@@ -54,42 +54,42 @@ class LambdaExpressionTest {
 
     @Test
     void stringLengthFunction() {
-        Function<String, Integer> func = LambdaExpression.stringLengthFunction();
+        Function<String, Integer> func = LambdaExpressionTask.stringLengthFunction();
         Integer actual = func.apply("abc");
         assertEquals(3, actual);
     }
 
     @Test
     void toStringFunction() {
-        Function<Integer, String> toStringFunction = LambdaExpression.toStringFunction();
+        Function<Integer, String> toStringFunction = LambdaExpressionTask.toStringFunction();
         String actual = toStringFunction.apply(1234);
         assertEquals("1234", actual);
     }
 
     @Test
     void javaSupplier() {
-        Supplier<String> stringSupplier = LambdaExpression.javaSupplier();
+        Supplier<String> stringSupplier = LambdaExpressionTask.javaSupplier();
         String actual = stringSupplier.get();
         assertEquals("Java", actual);
     }
 
     @Test
     void collectionSupplier() {
-        Supplier<List<String>> supplier = LambdaExpression.collectionSupplier();
+        Supplier<List<String>> supplier = LambdaExpressionTask.collectionSupplier();
         List<String> actual = supplier.get();
         assertEquals(List.of("one", "two", "three"), actual);
     }
 
     @Test
     void intSquare() {
-        IntUnaryOperator intUnaryOperator = LambdaExpression.intSquare();
+        IntUnaryOperator intUnaryOperator = LambdaExpressionTask.intSquare();
         int actual = intUnaryOperator.applyAsInt(5);
         assertEquals(25, actual);
     }
 
     @Test
     void multiplication() {
-        IntBinaryOperator multiplication = LambdaExpression.multiplication();
+        IntBinaryOperator multiplication = LambdaExpressionTask.multiplication();
         int actual = multiplication.applyAsInt(2, 6);
         assertEquals(12, actual);
     }
@@ -98,14 +98,14 @@ class LambdaExpressionTest {
     class multiplicationResultIsEvenTest {
         @Test
         void multiplicationResultIsEvenPositive() {
-            BiPredicate<Integer, Integer> biPredicate = LambdaExpression.multiplicationResultIsEven();
+            BiPredicate<Integer, Integer> biPredicate = LambdaExpressionTask.multiplicationResultIsEven();
             boolean actual = biPredicate.test(5, 2);
             assertTrue(actual);
         }
 
         @Test
         void multiplicationResultIsEvenNegative() {
-            BiPredicate<Integer, Integer> biPredicate = LambdaExpression.multiplicationResultIsEven();
+            BiPredicate<Integer, Integer> biPredicate = LambdaExpressionTask.multiplicationResultIsEven();
             boolean actual = biPredicate.test(3, 7);
             assertFalse(actual);
         }
