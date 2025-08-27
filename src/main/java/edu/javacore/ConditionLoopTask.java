@@ -11,6 +11,12 @@ public class ConditionLoopTask {
         Print Initial for elementary level (grade from 1 to 3), Average for average level (grade from 4 to 6), Sufficient for sufficient level (grade from 7 to 9) and High for high level (grade from 10 to 12).
     */
     public String levelEducationAchievements(int grade) {
+        switch (grade) {
+            case 1: case 2: case 3: return "Initial"; 
+            case 4: case 5: case 6: return "Average";
+            case 7: case 8: case 9: return "Sufficient";
+            case 10: case 11: case 12: return "High";
+        }
         return null;
     }
 
@@ -24,6 +30,19 @@ public class ConditionLoopTask {
         For spring months print Spring, for summer - Summer, for autumn - Autumn and for winter - Winter.
      */
     public String season(int month) {
+        if ( month == 12 || month < 3 && month > 0 ) {
+            return "Winter";
+        }
+        else if (month > 2 && month < 6) {
+            return "Spring";        
+        }
+        else if (month >5 && month < 9) {
+            return "Summer";
+        }
+        else if (month > 8 && month < 12)
+        {
+            return "Autumn";
+        }
         return null;
     }
 
