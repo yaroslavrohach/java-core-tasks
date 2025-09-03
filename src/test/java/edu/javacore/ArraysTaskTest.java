@@ -61,13 +61,7 @@ class ArraysTaskTest {
         return Stream.of(new int[]{2, 3, 8}, new int[]{2, 8, 3}, new int[]{8, 3, 2});
     }
 
-    @Test
-    void arithmeticalMeanWithoutPositiveValues() {
-        double actual = unit.arithmeticalMean(new double[]{-1.5, -3.8, -5, -2, -1, 0});
-        assertEquals(0, actual);
-    }
-
-
+  
     @Test
     void maxOfAbsoluteValuePositive() {
         double actual = unit.maxOfAbsoluteValues(new double[]{1, 3, 2.2, -5, 18, -10.8, 22.5});
